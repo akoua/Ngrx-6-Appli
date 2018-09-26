@@ -1,3 +1,24 @@
-<p>
-  places-add works!
-</p>
+<mat-card>
+  <mat-card-header>  
+    <mat-card-title> <h2>Enregistrer un nouvel espace</h2> </mat-card-title>  
+  </mat-card-header>
+  <form [formGroup]="placeAddForm" (submit)="enregistrerRestaurant(placeAddForm)" [style.fontSize.px]="getFontSize()" class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Restaurant" id="placeName" formControlName="placeName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="placeStreet" id="placeStreet" formControlName="placeStreet">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="placeTown" id="placeTown" formControlName="placeTown">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="placeZip" id="placeZip" formControlName="placeZip">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary">Valider</button>
+  </form>
+</mat-card>

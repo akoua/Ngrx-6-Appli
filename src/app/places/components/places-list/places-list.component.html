@@ -1,3 +1,13 @@
-<p>
-  places-list works!
-</p>
+<h2>Restaurants déjà proposés</h2>
+<!-- {{ places | json }} -->
+<hr>
+<div *ngIf="places">
+  <div *ngFor="let place of places.places">
+    <b>{{ place.name }}</b>
+    <br>
+    {{place.street}} 
+    <br>
+    {{place.zip}} {{place.town}}
+    <hr>
+  </div>
+</div>

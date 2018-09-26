@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PlacesService } from '../../../service/places.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Place } from '../../../models/place';
 
 @Component({
   selector: 'app-places-list',
@@ -8,15 +8,12 @@ import { PlacesService } from '../../../service/places.service';
 })
 export class PlacesListComponent implements OnInit {
 
-  constructor(private servicePlace: PlacesService) { }
+  @Input() places: Place[];
 
-  ngOnInit() {
-    this.servicePlace.getPlaces()
-      .subscribe(
-        places => {
-          console.log("depuis placesList ",places);
-        }
-      );
+  constructor(  ) { }
+
+  ngOnInit() {  
+    console.log("places ", this.places) ;
   }
 
 }
